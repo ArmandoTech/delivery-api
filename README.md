@@ -1,5 +1,7 @@
 # Delivery-API
 
+This repository contains the backend code for a food delivery application. This application has been developed for a development event organized by [programación en español Comunity](https://www.twitch.tv/programacion_en_esp)
+
 ## Mount local environment
 
 ### System requirements
