@@ -16,7 +16,7 @@ export const validateToken = async (req, res, next) => {
 		const { userId } = jwt.verify(token, SECRET); // throw err if is invalid
 		const user = await User.findById(userId).exec();
 		if (!user) return res.status(401).json({ msg: UNREGISTERED_USER });
-		if (!user.active) return res.status(401).json({ msg: USER_NOT_ACTIVE });
+		if (user.deleted) return res.status(401).json({ msg: USER_NOT_ACTIVE });
 		if (!user.verify) return res.status(401).json({ msg: USER_NOT_VERIFIED });
 		req.user = user;
 		next();
