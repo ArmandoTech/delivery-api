@@ -5,7 +5,8 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
-		"dev": "nodemon -L",
+		"dev": "npm run reset && nodemon -L",
+		"reset": "node ./src/utils/resetDb/resetDb.js",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"format": "prettier --write .",
 		"lint": "eslint . --ext .js --fix"
