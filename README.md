@@ -13,27 +13,28 @@ This repository contains the backend code for a food delivery application. This 
 
 1. Clone the respository.
 
-    ```shell
-    git clone https://github.com/ArmandoTech/delivery-api.git
-    cd delivery-api
-    ```
+   ```shell
+   git clone https://github.com/ArmandoTech/delivery-api.git
+   cd delivery-api
+   ```
 
 2. Install all dependencies with NPM.
 
-    ```shell
-    npm install
-    ```
+   ```shell
+   npm install
+   ```
 
 3. Create .env file at respository root and add this params in it:
-    ```shell
-    PORT=
-    MONGODB_URI=
-    ```
+
+   ```shell
+   PORT=
+   MONGODB_URI=
+   ```
 
 4. Execute development server
 
-    ```shell
-    npm run dev
-    ```
+   ```shell
+   npm run dev
+   ```
 
 5. If application is working, you can see the message "Server running on port: ${PORT} 😎" on console.
