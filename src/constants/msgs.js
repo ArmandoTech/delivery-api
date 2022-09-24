@@ -18,3 +18,4 @@ export const BAD_CREDENTIALS = "Credenciales incorrectas";
 export const UNREGISTERED_USER = "Usuario no registrado";
 export const USER_NOT_VERIFIED = "Usuario no verificado";
 export const ERR_SIZE_DTO = "Tamaño DTO incorrecto";
+export const USER_NOT_ACTIVE = "Usuario inactivo";

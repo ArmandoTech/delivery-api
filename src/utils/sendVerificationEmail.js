@@ -7,7 +7,7 @@ export const sendVerificationEmail = async (email, token) => {
 		from: `Bella ${EMAIL_NODEMAILER}`,
 		to: email,
 		subject: "✔ Verify email ✔",
-		text: `${API_BASE_URL}/auth/register-verify?token=${token}`
+		text: `${API_BASE_URL}/auth/verify-register?token=${token}`
 	});
 
 	return res;
