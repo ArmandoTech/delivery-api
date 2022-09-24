@@ -1,11 +1,11 @@
 import { model, Schema } from "mongoose";
-import { admin, client, motorized } from "../constants/roles.js";
+import { ADMIN, CLIENT, MOTORIZED } from "../constants/roles.js";
 
 const UserSchema = new Schema(
 	{
 		deleted: { type: Boolean, default: false },
 		verify: { type: Boolean, default: false },
-		role: { type: String, enum: [client, motorized, admin], default: client },
+		role: { type: String, enum: [CLIENT, ADMIN, MOTORIZED], default: CLIENT },
 		username: { type: String, required: true, unique: true },
 		email: { type: String, required: true, unique: true },
 		password: { type: String, required: true },
