@@ -9,3 +9,4 @@ export const EMAIL_UNAVAILABLE = "Correo electrónico no disponible";
 export const VIRIFY_EMAIL =
 	"Por favor verifique su cuenta cliqueando el enlace enviado a su correo 🍺";
 export const SUCCESSFUL_REGISTRATION = "Registro exitoso";
+export const CREDENTIALS_NOT_AVALIABLE = "Credenciales no disponibles";
