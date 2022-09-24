@@ -11,7 +11,7 @@ export const registerController = async (req, res, next) => {
 		const [user, created] = await findOrCreateUser(req.body);
 		if (!created && user.verify)
 			return res.status(400).json({ msg: CREDENTIALS_NOT_AVALIABLE });
-		const token = createToken({ userId: user.id }, "1h");
+		const token = createToken({ userId: user._id }, "1h");
 		await sendVerificationEmail(user.email, token);
 		res.status(201).json({ msg: VIRIFY_EMAIL });
 	} catch (error) {
