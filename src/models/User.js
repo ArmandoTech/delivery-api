@@ -3,7 +3,7 @@ import { ADMIN, CLIENT, MOTORIZED } from "../constants/roles.js";
 
 const UserSchema = new Schema(
 	{
-		active: { type: Boolean, default: false },
+		active: { type: Boolean, default: true },
 		verify: { type: Boolean, default: false },
 		role: { type: String, enum: [CLIENT, ADMIN, MOTORIZED], default: CLIENT },
 		username: { type: String, required: true, unique: true },
