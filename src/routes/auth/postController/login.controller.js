@@ -13,11 +13,11 @@ export const loginController = async (req, res, next) => {
 		if (!user?.verify) return res.status(401).json({ msg: USER_NOT_VERIFIED });
 		const token = createToken({ userId: user._id }, "24h");
 		const dataUser = {
-			token,
 			username: user.username,
 			email: user.email,
 			role: user.role,
-			name: user.name
+			name: user.name,
+			token
 		};
 		res.status(200).json(dataUser);
 	} catch (error) {
