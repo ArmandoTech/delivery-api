@@ -4,7 +4,7 @@ import { API_BASE_URL } from "../env/server.js";
 
 export const sendVerificationEmail = async (email, token) => {
 	const res = await transporter.sendMail({
-		from: `Bella ${EMAIL_NODEMAILER}`,
+		from: `Delivery ${EMAIL_NODEMAILER}`,
 		to: email,
 		subject: "✔ Verify email ✔",
 		text: `${API_BASE_URL}/auth/verify-register?token=${token}`
