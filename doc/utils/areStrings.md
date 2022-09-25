@@ -1,7 +1,7 @@
 # areStrings()
 
-- Recibe un array como param obligatorio, lanza err en caso contrario.
-- Retorna un boolean indicando si todos los items del array son de tipo string
+- Receives an array as mandatory param, throws err otherwise.
+- Returns a boolean indicating if all the items in the array are of type string
 
 ```
   const persons = [ "edarcode", "lorena" ]

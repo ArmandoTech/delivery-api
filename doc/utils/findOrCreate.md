@@ -1,13 +1,13 @@
 # findOrCreate()
 
-- Retorna una promesa
-- Al resolver envia un array de 2 posiciones:
-  - **primera posición:** el document encontrado o creado.
-  - **segunda posición:** boolean indicando si fue encontrado o creado dicho documento
-- Recibe 3 params:
-  - **Model:** indica el modelo sobre el cual buscará o creará en su defecto.
-  - **search:** un objeto que indica los params sobre los cuales hará la busqueda.
-  - **data:** los datos o campos del documento que incrustará en caso de no ser encontrado. Se toman en cuenta los params de busqueda enviados en search, por lo que no es necesario repetir campos si fueron digitados en search
+- Return a promise
+- When solving it sends an array of 2 positions:
+  - **first position:** the document found or created.
+  - **second position:** boolean indicating if the document was found or created
+- Receive 3 params:
+  - **Model:** indicates the model on which it will search or create instead.
+  - **search:** an object that indicates the params on which the search will be done.
+  - **data:** the data or fields of the document that will be embedded in case it is not found. The search params sent in search are taken into account, so it is not necessary to repeat fields if they were typed in search
 
 ```
   import { User } from "../models/User.js";

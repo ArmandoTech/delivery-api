@@ -2,7 +2,7 @@
 
 ## http://localhost:3000/auth/register (POST)
 
-Permite registrar un usuario, se enviará un link al correo el cual debe ser cliqueado para verificar el registro, el link tiene incrustado un token valido por 1h. Envie la DTO por body.
+It allows registering a user, a link will be sent to the email which must be clicked to verify the registration, the link has a token valid for 1h embedded. Send the DTO by body.
 
 ```
   {
@@ -13,7 +13,7 @@ Permite registrar un usuario, se enviará un link al correo el cual debe ser cli
   }
 ```
 
-Responde con status 201 si todo sale bien + un json:
+Reply with status 201 if all goes well + a json:
 
 ```
 {
@@ -23,7 +23,7 @@ Responde con status 201 si todo sale bien + un json:
 
 ## http://localhost:3000/auth/login (POST)
 
-Permite al usuario obtener un token y algunos datos del usuario asociado al mismo. El usuario debe tener una cuenta varificada. Puede hacer login con email o username. Envie la DTO por body
+Allows the user to obtain a token and some user data associated with it. The user must have a varified account. You can login with email or username. Send the DTO by body
 
 ```
   {
@@ -41,7 +41,7 @@ Permite al usuario obtener un token y algunos datos del usuario asociado al mism
   }
 ```
 
-Responde con status 201 si todo sale bien + un json:
+Reply with status 201 if all goes well + a json:
 
 ```
   {
@@ -53,13 +53,13 @@ Responde con status 201 si todo sale bien + un json:
   }
 ```
 
-El token es valido por 24h.
+The token is valid for 24h.
 
 ## http://localhost:3000/auth/verify-token (POST)
 
-Permite validar si un token es valido. Debe enviar por headers el token a validar con la key "token".
+Allows to validate if a token is valid. You must send the token to be validated with the key "token" through headers.
 
-Responde con status 200 si todo sale bien + un json:
+Reply with status 200 if all goes well + a json:
 
 ```
   {
@@ -72,9 +72,9 @@ Responde con status 200 si todo sale bien + un json:
 
 ## http://localhost:3000/auth/verify-register (GET)
 
-Valida si se ha cliqueado en el link enviado al correo de un usuario al registrarse. El token está incrustado como query "token".
+Validates if the link sent to a user's email when registering has been clicked. The token is embedded as a "token" query.
 
-Responde con status 200 si todo sale bien + un json:
+Reply with status 200 if all goes well + a json:
 
 ```
   {
