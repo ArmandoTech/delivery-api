@@ -14,11 +14,11 @@ export const getUser = async queries => {
 };
 
 const addQueriesFind = queries => {
-	const { active, role, name, email } = queries;
+	const { active, role, username, email } = queries;
 	const queryFind = {};
 	if (active) queryFind.active = active;
 	if (role) queryFind.role = role;
-	if (name) queryFind.name = name;
+	if (username) queryFind.username = username;
 	if (email) queryFind.email = email;
 	return queryFind;
 };
