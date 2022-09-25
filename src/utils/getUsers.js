@@ -14,12 +14,11 @@ export const getUser = async queries => {
 };
 
 const addQueriesFind = queries => {
-	const { deleted, role, name, surname, email } = queries;
+	const { active, role, name, email } = queries;
 	const queryFind = {};
-	if (deleted) queryFind.deleted = deleted;
+	if (active) queryFind.active = active;
 	if (role) queryFind.role = role;
 	if (name) queryFind.name = name;
-	if (surname) queryFind.surname = surname;
 	if (email) queryFind.email = email;
 	return queryFind;
 };

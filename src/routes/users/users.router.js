@@ -1,4 +1,6 @@
 import { Router } from "express";
+import { validateDtoGetOneUser } from "../../middlewares/validateDtoGetOneUser.js";
+import { validateDtoGetUsers } from "../../middlewares/validateDtoGetUsers.js";
 import { deleteUserController } from "./deleteController/deleteUser.controller.js";
 import { getAllUsersController } from "./getController/getAllUsers.controller.js";
 import { getOneUserController } from "./getController/getOneUser.controller.js";
@@ -6,7 +8,7 @@ import { updateUserController } from "./updateController/updateUser.controller.j
 
 export const users = Router();
 
-users.route("/").get(getAllUsersController);
-users.route("/:id").get(getOneUserController);
+users.route("/").get(validateDtoGetUsers, getAllUsersController);
+users.route("/:id").get(validateDtoGetOneUser, getOneUserController);
 users.route("/:id").delete(deleteUserController);
 users.route("/:id").patch(updateUserController);
