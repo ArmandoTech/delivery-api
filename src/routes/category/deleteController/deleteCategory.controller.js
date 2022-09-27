@@ -1,8 +1,10 @@
-import { deleteCategory } from "../../../utils/queries/deleteCategory.js";
+import { deleteCategory } from "../../../utils/categoryQueries/deleteCategory.js";
 
 export const deleteCategoryController = async (req, res, next) => {
 	try {
-		console.log(deleteCategory);
+		const { id } = req.body;
+		await deleteCategory(id);
+
 		res.status(200).json({ msg: "👋" });
 	} catch (error) {
 		next(error);

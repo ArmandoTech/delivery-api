@@ -1,12 +1,11 @@
-import { CategoriesModel } from "../../models/Category.js";
+import { CategoryModel } from "../../models/Category.js";
 
-export const deleteCategory = categoryName => {
+export const deleteCategory = async categoryId => {
+	const { deletedCount } = await CategoryModel.deleteOne({ _id: categoryId });
 	const result = {
-		status: "success",
-		message: "Category was successfully deleted."
+		status: deletedCount ? "success" : "failure",
+		msg: deletedCount ? "Category was successfully deleted." : "Category doesn't exist."
 	};
-
-	CategoriesModel.deleteOne({ name: categoryName });
 
 	return result;
 };

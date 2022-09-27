@@ -108,3 +108,6 @@ package-lock.json
 
 # yarn.lock
 yarn.lock
+
+#images
+src/imgs/*.png

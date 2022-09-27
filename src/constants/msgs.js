@@ -21,3 +21,5 @@ export const USER_NOT_VERIFIED = "Unverified user";
 export const ERR_SIZE_DTO = "Incorrect DTO size";
 export const USER_NOT_ACTIVE = "Inactive user";
 export const TYPE_DTO_ERR = "Types dto err";
+export const CATEGORY_CREATION_SUCCESS = "Category successfully created";
+export const EMPTY_QUERY_RESULT = "No matches found for your search";
