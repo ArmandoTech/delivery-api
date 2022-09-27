@@ -17,7 +17,7 @@ export const getUser = async queries => {
 
 	const count = await User.countDocuments();
 	const totalPages = Math.ceil(count / limit);
-	return { users, count, totalPages, currenPage: page };
+	return { users, count, totalPages, currentPage: page };
 };
 
 const addQueriesFind = queries => {
