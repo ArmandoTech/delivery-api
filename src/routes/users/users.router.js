@@ -5,13 +5,11 @@ import { validateDtoUpdateUser } from "../../middlewares/validateDtoUpdateUser.j
 import { deleteUserController } from "./deleteController/deleteUser.controller.js";
 import { getAllUsersController } from "./getController/getAllUsers.controller.js";
 import { getOneUserController } from "./getController/getOneUser.controller.js";
-import { getUserByUsername } from "./getController/getUserByUsername.controller.js";
 import { updateUserController } from "./updateController/updateUser.controller.js";
 
 export const users = Router();
 
 users.route("/").get(validateDtoGetUsers, getAllUsersController);
 users.route("/:id").get(validateDtoGetOneUser, getOneUserController);
-users.route("/find-user/:username").get(getUserByUsername);
 users.route("/:id").delete(validateDtoGetOneUser, deleteUserController);
 users.route("/:id").patch(validateDtoUpdateUser, updateUserController);
