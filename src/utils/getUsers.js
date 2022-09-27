@@ -3,7 +3,14 @@ import { User } from "../models/User.js";
 
 export const getUser = async queries => {
 	const { page = 0, limit = LIMIT_USERS } = queries;
-	const users = await User.find(addQueriesFind(queries))
+	const search = addQueriesFind(queries);
+	if (search.username) {
+		const regexUser = User.findOne({
+			username: { $regex: search.username, $options: "i" }
+		});
+		return regexUser;
+	}
+	const users = await User.find(search)
 		.limit(limit)
 		.skip(page * limit)
 		.exec();
