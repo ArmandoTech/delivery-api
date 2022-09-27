@@ -1,7 +1,7 @@
 import { User } from "../models/User.js";
 
-export const deleteUser = async query => {
-	const { id } = query;
-	const user = User.findOneAndUpdate(id, { deleted: true });
+export const deleteUser = async params => {
+	const { id } = params;
+	const user = User.findOneAndUpdate(id, { active: false });
 	return user;
 };
