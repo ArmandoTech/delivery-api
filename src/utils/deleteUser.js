@@ -1,4 +1,4 @@
-import { User } from "../models/users.js";
+import { User } from "../models/User.js";
 
 export const deleteUser = async query => {
 	const { id } = query;

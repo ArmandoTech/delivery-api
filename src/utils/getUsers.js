@@ -1,5 +1,5 @@
 import { LIMIT_USERS } from "../constants/limits.js";
-import { User } from "../models/users.js";
+import { User } from "../models/User.js";
 
 export const getUser = async queries => {
 	const { page = 0, limit = LIMIT_USERS } = queries;
