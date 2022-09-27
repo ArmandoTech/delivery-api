@@ -1,12 +1,12 @@
 import { Router } from "express";
-import { getAllCategoriesController } from "./getController/getAllCategories.controller.js";
+import { deleteCategoryController } from "./deleteController/deleteCategory.controller.js";
+import { getCategoriesController } from "./getController/getCategories.controller.js";
 import { createCategoryController } from "./postController/createCategory.controller.js";
-import { getOneCategoryController } from "./getController/getOneCategory.controller.js";
+import { putCategoryController } from "./putController/putCategory.controller.js";
 
 export const categories = Router();
 
-categories.route("/").get(getAllCategoriesController);
-categories.route("/:category").get(getOneCategoryController);
-
-categories.route("/:category").post(createCategoryController);
+categories.route("/").get(getCategoriesController);
+categories.route("/:id").put(putCategoryController);
 categories.route("/").post(createCategoryController);
+categories.route("/").delete(deleteCategoryController);

@@ -15,6 +15,6 @@ const resetDb = async () => {
 connDb()
     .then(() => resetDb())
     .then(() => {
-        console.log("BD reseted");
+        console.log("DB reseted");
         process.exit();
     });
