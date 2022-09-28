@@ -1,5 +1,6 @@
 import "dotenv/config";
 import { connDb } from "../../connDb.js";
+import { fillAllDb } from "../fillDb/fillAllDb.js";
 import { modelsCollection } from "./modelsCollection.js";
 
 const resetDb = async () => {
@@ -14,6 +15,7 @@ const resetDb = async () => {
 
 connDb()
     .then(() => resetDb())
+    .then(() => fillAllDb())
     .then(() => {
         console.log("DB reseted");
         process.exit();
