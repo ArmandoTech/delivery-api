@@ -8,13 +8,13 @@ export const getUser = async queries => {
 	const totalPages = Math.ceil(count / limit);
 
 	if (search.username) {
-		const regexUsername = User.findOne({
+		const regexUsername = await User.findOne({
 			username: { $regex: search.username, $options: "i" }
 		});
 		return regexUsername;
 	}
 	if (search.name) {
-		const regexName = User.findOne({
+		const regexName = await User.findOne({
 			name: { $regex: search.name, $options: "i" }
 		});
 		return regexName;
