@@ -1,3 +1,3 @@
-export const CLIENT = "cliente";
+export const CLIENT = "client";
 export const ADMIN = "admin";
-export const MOTORIZED = "motorizado";
+export const MOTORIZED = "motorized";

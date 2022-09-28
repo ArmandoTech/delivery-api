@@ -1,7 +1,7 @@
 import { User } from "../models/User.js";
 
-export const updateUser = async (query, body) => {
-	const { id } = query;
+export const updateUser = async (params, body) => {
+	const { id } = params;
 	const { username, email, password, img, phone } = body;
 	const user = User.findOneAndUpdate(id, {
 		username,

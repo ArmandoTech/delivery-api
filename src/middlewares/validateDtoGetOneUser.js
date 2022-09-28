@@ -6,7 +6,7 @@ import {
 import { areStrings } from "../utils/areStrings.js";
 
 export const validateDtoGetOneUser = (req, res, next) => {
-	const dto = req.query;
+	const dto = req.params;
 	const sizeDto = Object.entries(dto).length;
 	if (sizeDto !== 1) return res.status(400).json({ msg: ERR_SIZEDTO_TYPE });
 	if (!dto.id) return res.status(400).json({ msg: REQUIRED_ID });
