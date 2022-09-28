@@ -7,6 +7,13 @@ export const usersMockup = [
 		verify: true
 	},
 	{
+		email: "armando12@gmail.com",
+		password: "12334",
+		username: "armandoooo",
+		name: "armandino",
+		verify: true
+	},
+	{
 		email: "chris@gmail.com",
 		password: "123",
 		username: "chris",
