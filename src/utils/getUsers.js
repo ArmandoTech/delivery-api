@@ -4,7 +4,7 @@ import { User } from "../models/User.js";
 export const getUser = async queries => {
 	const { page = 0, limit = LIMIT_USERS } = queries;
 	const search = addQueriesFind(queries);
-	const count = await User.countDocuments();
+	const count = await User.countDocuments(search);
 	const totalPages = Math.ceil(count / limit);
 
 	if (search.username) {

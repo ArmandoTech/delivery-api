@@ -7,7 +7,7 @@ export const DESTROY = "Resource removed successfully";
 export const ALREADY_EXISTS = "This resource already exists";
 export const EMAIL_UNAVAILABLE = "Email not available";
 export const VIRIFY_EMAIL =
-    "Verify your account by clicking the link sent to your email";
+	"Verify your account by clicking the link sent to your email";
 export const UNEXPECTED_ROLE = "Role does not exist ";
 export const ERR_TYPE_ACTIVE = "Active must be a boolean";
 export const ERR_USERNAME_TYPE = "Username must be a string";
@@ -35,3 +35,6 @@ export const USER_NOT_ACTIVE = "Inactive user";
 export const TYPE_DTO_ERR = "Types dto err";
 export const CATEGORY_CREATION_SUCCESS = "Category successfully created";
 export const EMPTY_QUERY_RESULT = "No matches found for your search";
+export const ERR_TITLE_TYPE = "Title must be a string";
+export const ERR_DESCRIPTION_TYPE = "Description must be a string";
+export const ERR_PRICE_TYPE = "Price must be a number";
