@@ -38,3 +38,4 @@ export const EMPTY_QUERY_RESULT = "No matches found for your search";
 export const ERR_TITLE_TYPE = "Title must be a string";
 export const ERR_DESCRIPTION_TYPE = "Description must be a string";
 export const ERR_PRICE_TYPE = "Price must be a number";
+export const ERR_QUERY_TYPE = "Query filter are not allowed";

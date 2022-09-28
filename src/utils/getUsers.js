@@ -24,7 +24,7 @@ export const getUser = async queries => {
 		.skip(page * limit)
 		.exec();
 
-	return { users, count, totalPages, currentPage: page };
+	return { count, totalPages, currentPage: page, users };
 };
 
 const addQueriesFind = queries => {
