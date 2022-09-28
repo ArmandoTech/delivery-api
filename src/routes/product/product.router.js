@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { validateDtoCreateProducts } from "../../middlewares/validateDtoCreateProducts.js";
 import { validateDtoGetOneProduct } from "../../middlewares/validateDtoGetOneProduct.js";
 import { validateDtoGetProducts } from "../../middlewares/validateDtoGetProducts.js";
 import { deleteProductController } from "./deleteController/deleteProduct.controller.js";
@@ -11,6 +12,8 @@ export const products = Router();
 
 products.route("/").get(validateDtoGetProducts, getAllProductsController);
 products.route("/:id").get(validateDtoGetOneProduct, getOneProductController);
-products.route("/").post(createProductController);
-products.route("/:id").delete(deleteProductController);
+products.route("/").post(validateDtoCreateProducts, createProductController);
+products
+	.route("/:id")
+	.delete(validateDtoGetOneProduct, deleteProductController);
 products.route("/:id").patch(updateProductController);
