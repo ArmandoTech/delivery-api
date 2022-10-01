@@ -3,17 +3,18 @@ import { model, Schema } from "mongoose";
 const Category = new Schema({
 	normalizedDisplay: {
 		type: String,
-		require: true,
+		required: true,
 		unique: true
 	},
 	display: {
 		type: String,
-		require: true,
+		required: true,
 		unique: true
 	},
 	img: {
-		type: String,
-	}
+		type: String
+	},
+	products: [{ type: Schema.Types.ObjectId, ref: "Product" }]
 });
 
 Category.set("versionKey", false);

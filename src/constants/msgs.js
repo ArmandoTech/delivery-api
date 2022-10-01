@@ -39,3 +39,6 @@ export const ERR_TITLE_TYPE = "Title must be a string";
 export const ERR_DESCRIPTION_TYPE = "Description must be a string";
 export const ERR_PRICE_TYPE = "Price must be a number";
 export const ERR_QUERY_TYPE = "Query filter are not allowed";
+export const ERR_PARAMETERS_MISSING =
+	"There must be name, description, price and images";
+export const ERR_NOT_ARRAY = "Categories must be an array";
