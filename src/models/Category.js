@@ -18,10 +18,5 @@ const Category = new Schema({
 });
 
 Category.set("versionKey", false);
-Category.set("toJSON", {
-	transform: function (_, ret) {
-		ret.imgRoute = process.env.CATEGORY_STATIC_ROUTE + ret.imgFilename;
-	}
-});
 
 export const CategoryModel = model("Category", Category);

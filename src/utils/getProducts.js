@@ -7,18 +7,6 @@ export const getProduct = async queries => {
 	const totalPages = Math.ceil(count / limit);
 	const search = addQueriesFind(queries);
 
-	if (search.title) {
-		const regexTitle = Product.findOne({
-			title: { $regex: search.title, $options: "i" }
-		});
-		return regexTitle;
-	}
-	if (search.description) {
-		const regexDescription = Product.findOne({
-			description: { $regex: search.description, $options: "i" }
-		});
-		return regexDescription;
-	}
 	const products = await Product.find(search)
 		.limit(limit)
 		.skip(page * limit)
@@ -28,10 +16,10 @@ export const getProduct = async queries => {
 };
 
 const addQueriesFind = queries => {
-	const { title, description, price } = queries;
+	const { name, description, price } = queries;
 	const queryFind = {};
-	if (title) queryFind.title = title;
-	if (description) queryFind.description = description;
+	if (name) queryFind.name = new RegExp(name, "i");
+	if (description) queryFind.description = new RegExp(description, "i");
 	if (price) queryFind.price = price;
 	return queryFind;
 };
