@@ -14,11 +14,10 @@ export const createProduct = async body => {
 			description
 		}
 	);
-	try {
-		await addCategoriesToProducts(product, categories);
-		await addProductsToCategories(categories, product);
-	} catch (error) {
-		await Product.deleteOne({ _id: product._id }).exec();
-	}
+
 	if (!created) throw TypeError("Product already exits");
+
+	await addCategoriesToProducts(product, categories);
+	await addProductsToCategories(categories, product);
+	await document.save();
 };
