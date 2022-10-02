@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Template Nodejs, Mongoose
 =======
 # Delivery-API
@@ -41,4 +40,3 @@ This repository contains the backend code for a food delivery application. This 
    ```
 
 5. If application is working, you can see the message "Server running on port: ${PORT} 😎" on console.
->>>>>>> development
