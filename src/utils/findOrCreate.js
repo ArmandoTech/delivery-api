@@ -7,7 +7,6 @@ export const findOrCreate = async (Model, search, data) => {
 	if (document) return [document, false];
 	else {
 		const newDocument = new Model({ ...search, ...data });
-		const document = await newDocument.save();
-		return [document, true];
+		return [newDocument, true];
 	}
 };
