@@ -6,10 +6,10 @@ import { createCategory } from "../../../utils/categoryQueries/createCategory.js
 
 export const createCategoryController = async (req, res, next) => {
 	try {
-		const { display, img } = req.body;
+		const { display } = req.body;
 
 		if (display) {
-			const [category, created] = await createCategory(display, img || "");
+			const [category, created] = await createCategory(req.body);
 			const queryStatus = created ? "success" : "failure";
 			const msg = created
 				? `${CATEGORY_CREATION_SUCCESS}: '${display}'.`
