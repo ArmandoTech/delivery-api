@@ -1,18 +1,22 @@
-export const getPaginatedModel = async (Model, { query = {}, limit = 10, page = 0 }) => {
-    if (!Model) throw TypeError("Model is required.");
+export const getPaginatedModel = async (
+	Model,
+	{ query = {}, limit = 10, page = 0, populate }
+) => {
+	if (!Model) throw TypeError("Model is required.");
 
-    const currentPage = page * limit;
-    const count = await Model.countDocuments(query);
-    const documents = await Model
-        .find(query)
-        .limit(limit)
-        .skip(currentPage)
-        .exec();
+	const currentPage = page * limit;
+	const count = await Model.countDocuments(query);
 
-    return {
-        count,
-        currentPage,
-        totalPage: Math.ceil(count / limit),
-        documents,
-    }
-}
+	const queryBuilder = Model.find(query);
+
+	if (populate) queryBuilder.populate(populate);
+
+	const documents = await queryBuilder.limit(limit).skip(currentPage).exec();
+
+	return {
+		count,
+		currentPage,
+		totalPage: Math.ceil(count / limit),
+		documents
+	};
+};
