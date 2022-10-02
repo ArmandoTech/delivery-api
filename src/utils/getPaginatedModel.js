@@ -14,9 +14,9 @@ export const getPaginatedModel = async (
 	const documents = await queryBuilder.limit(limit).skip(currentPage).exec();
 
 	return {
+		totalPage: Math.ceil(count / limit),
 		count,
 		currentPage,
-		totalPage: Math.ceil(count / limit),
 		documents
 	};
 };

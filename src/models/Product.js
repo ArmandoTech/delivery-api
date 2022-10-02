@@ -9,4 +9,6 @@ const ProductSchema = new Schema({
 	categories: [{ type: Schema.Types.ObjectId, ref: "Category" }]
 });
 
+ProductSchema.set("versionKey", false);
+
 export const Product = model("Product", ProductSchema);
