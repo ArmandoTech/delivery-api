@@ -19,5 +19,5 @@ export const createProduct = async body => {
 
 	await addCategoriesToProducts(product, categories);
 	await addProductsToCategories(categories, product);
-	await document.save();
+	await product.save();
 };
