@@ -5,22 +5,23 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
-		"dev": "nodemon -L",
+		"dev": "npm run reset && nodemon -L",
+		"reset": "node ./src/utils/resetDb/resetDb.js",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"format": "prettier --write .",
 		"lint": "eslint . --ext .js --fix"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/edarcode/template-api.git"
+		"url": "git+https://github.com/ArmandoTech/delivery-api.git"
 	},
 	"keywords": [],
 	"author": "edarcode",
 	"license": "ISC",
 	"bugs": {
-		"url": "https://github.com/edarcode/template-api/issues"
+		"url": "https://github.com/ArmandoTech/delivery-api/issues"
 	},
-	"homepage": "https://github.com/edarcode/template-api#readme",
+	"homepage": "https://github.com/ArmandoTech/delivery-api#readme",
 	"devDependencies": {
 		"eslint": "8.23.1",
 		"eslint-config-prettier": "8.5.0",

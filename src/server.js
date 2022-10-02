@@ -9,6 +9,7 @@ server.use(cors());
 server.use(express.urlencoded({ extended: true, limit: "50mb" }));
 server.use(express.json({ limit: "50mb" }));
 server.use(morgan("dev"));
+server.use("/static", express.static("src/imgs/"));
 
 server.use((_, res, next) => {
 	res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
