@@ -5,17 +5,17 @@ export const getPaginatedModel = async (
 	if (!Model) throw TypeError("Model is required.");
 
 	const currentPage = page * limit;
-	const count = await Model.countDocuments(query);
+	const countDocuments = await Model.countDocuments(query);
 
 	const queryBuilder = Model.find(query);
-
 	if (populate) queryBuilder.populate(populate);
+	if (query.select) queryBuilder.select(query.select);
 
 	const documents = await queryBuilder.limit(limit).skip(currentPage).exec();
 
 	return {
-		totalPage: Math.ceil(count / limit),
-		count,
+		totalPage: Math.ceil(countDocuments / limit),
+		countDocuments,
 		currentPage,
 		documents
 	};
