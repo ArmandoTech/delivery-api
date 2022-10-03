@@ -1,4 +1,4 @@
-import { Product } from "../models/Product.js";
+import { Product } from "../../models/Product.js";
 
 export const updateProduct = async (params, body) => {
 	const { id } = params;

@@ -1,4 +1,4 @@
-import { deleteProduct } from "../../../utils/deleteProduct.js";
+import { deleteProduct } from "../../../utils/products/deleteProduct.js";
 
 export const deleteProductController = async (req, res, next) => {
 	try {

@@ -1,4 +1,4 @@
-import { updateProduct } from "../../../utils/updateProduct.js";
+import { updateProduct } from "../../../utils/products/updateProduct.js";
 
 export const updateProductController = async (req, res, next) => {
 	try {

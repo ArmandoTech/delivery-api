@@ -1,4 +1,4 @@
-import { CategoryModel } from "../models/Category.js";
+import { CategoryModel } from "../../models/Category.js";
 
 export const addCategoriesToProducts = async (product, categoryIds) => {
 	const trueIds = new Set();
