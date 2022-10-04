@@ -1,5 +1,5 @@
 import { usersMockup } from "../../data/usersMockup.js";
-import { generateArrayPromises } from "../generateArrayPromises.js";
+import { generateArrayPromises } from "../common/generateArrayPromises.js";
 import { createUser } from "../users/createUser.js";
 
 export const fillUser = async () => {
