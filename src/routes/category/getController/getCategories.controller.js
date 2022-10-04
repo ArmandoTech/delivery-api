@@ -6,7 +6,7 @@ export const getCategoriesController = async (req, res, next) => {
 		const paginatedCategories = await getCategories(req.query);
 
 		res.status(200).json({
-			message: SUCCESS,
+			msg: SUCCESS,
 			...paginatedCategories
 		});
 	} catch (err) {
