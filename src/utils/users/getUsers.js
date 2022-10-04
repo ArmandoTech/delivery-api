@@ -6,7 +6,8 @@ export const getUser = async queries => {
 	const { page, limit = LIMIT_USERS } = queries;
 	const filters = addQueriesFind(queries);
 	const users = await getPaginatedModel(User, {
-		query: { ...filters, select: "_id active role username email name" },
+		query: { ...filters },
+		select: "_id active verify role username email name",
 		limit,
 		page,
 		collection: "users"
