@@ -1,3 +1,3 @@
-export const LIMIT_USERS = 10;
-export const LIMIT_CATEGORIES = 10;
-export const LIMIT_PRODUCTS = 10;
+export const LIMIT_USERS = 8;
+export const LIMIT_CATEGORIES = 5;
+export const LIMIT_PRODUCTS = 5;

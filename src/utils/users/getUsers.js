@@ -3,14 +3,15 @@ import { User } from "../../models/User.js";
 import { getPaginatedModel } from "../common/getPaginatedModel.js";
 
 export const getUser = async queries => {
-	const { page = 0, limit = LIMIT_USERS } = queries;
+	const { page, limit = LIMIT_USERS } = queries;
 	const filters = addQueriesFind(queries);
 	const users = await getPaginatedModel(User, {
-		query: { ...filters, select: "_id role username email name" },
+		query: { ...filters, select: "_id active role username email name" },
 		limit,
-		page
+		page,
+		collection: "users"
 	});
-	return { collection: "users", ...users };
+	return { ...users };
 };
 
 const addQueriesFind = queries => {
