@@ -3,7 +3,7 @@ import {
 	ERR_SIZEDTO_TYPE,
 	REQUIRED_ID
 } from "../constants/msgs.js";
-import { areStrings } from "../utils/areStrings.js";
+import { areStrings } from "../utils/common/areStrings.js";
 
 export const validateDtoGetOneUser = (req, res, next) => {
 	const dto = req.params;

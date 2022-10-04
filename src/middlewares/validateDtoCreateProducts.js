@@ -7,7 +7,7 @@ import {
 	ERR_SIZEDTO_TYPE,
 	ERR_TITLE_TYPE
 } from "../constants/msgs.js";
-import { areStrings } from "../utils/areStrings.js";
+import { areStrings } from "../utils/common/areStrings.js";
 
 export const validateDtoCreateProducts = (req, res, next) => {
 	const dto = req.body;

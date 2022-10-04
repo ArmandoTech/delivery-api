@@ -1,7 +1,7 @@
-import { LIMIT_PRODUCTS } from "../constants/limits.js";
-import { CategoryModel } from "../models/Category.js";
-import { Product } from "../models/Product.js";
-import { getPaginatedModel } from "./getPaginatedModel.js";
+import { LIMIT_PRODUCTS } from "../../constants/limits.js";
+import { Category } from "../../models/Category.js";
+import { Product } from "../../models/Product.js";
+import { getPaginatedModel } from "../common/getPaginatedModel.js";
 
 export const getProduct = async queries => {
 	const { page = 0, limit = LIMIT_PRODUCTS } = queries;
@@ -10,7 +10,7 @@ export const getProduct = async queries => {
 		query,
 		limit,
 		page,
-		populate: { path: "categories", model: CategoryModel, select: "-products" }
+		populate: { path: "categories", model: Category, select: "-products" }
 	});
 };
 

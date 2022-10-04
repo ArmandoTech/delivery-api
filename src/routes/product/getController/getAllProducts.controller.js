@@ -1,4 +1,4 @@
-import { getProduct } from "../../../utils/getProducts.js";
+import { getProduct } from "../../../utils/products/getProducts.js";
 
 export const getAllProductsController = async (req, res, next) => {
 	try {

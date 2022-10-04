@@ -1,11 +1,8 @@
-import { CategoryModel } from "../../models/Category.js";
+import { CustomError } from "../../classes/CustomError.js";
+import { Category } from "../../models/Category.js";
 
 export const deleteCategory = async categoryId => {
-	const { deletedCount } = await CategoryModel.deleteOne({ _id: categoryId });
-	const result = {
-		status: deletedCount ? "success" : "failure",
-		msg: deletedCount ? "Category was successfully deleted." : "Category doesn't exist."
-	};
-
-	return result;
+	const { deletedCount } = await Category.deleteOne({ _id: categoryId });
+	if (!deletedCount)
+		throw new CustomError({ status: 400, message: "Category doesn't exist." });
 };

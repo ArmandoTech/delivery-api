@@ -1,6 +1,6 @@
-import { LIMIT_USERS } from "../constants/limits.js";
-import { User } from "../models/User.js";
-import { getPaginatedModel } from "./getPaginatedModel.js";
+import { LIMIT_USERS } from "../../constants/limits.js";
+import { User } from "../../models/User.js";
+import { getPaginatedModel } from "../common/getPaginatedModel.js";
 
 export const getUser = async queries => {
 	const { page = 0, limit = LIMIT_USERS } = queries;

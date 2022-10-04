@@ -5,7 +5,7 @@ import {
 	UNEXPECTED_ROLE
 } from "../constants/msgs.js";
 import { ADMIN, CLIENT, MOTORIZED } from "../constants/roles.js";
-import { areStrings } from "../utils/areStrings.js";
+import { areStrings } from "../utils/common/areStrings.js";
 
 const roles = [CLIENT, ADMIN, MOTORIZED];
 const status = ["true", "false"];

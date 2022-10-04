@@ -1,7 +1,8 @@
-import { Product } from "../models/Product.js";
+import { Product } from "../../models/Product.js";
+import { findOrCreate } from "../common/findOrCreate.js";
+
 import { addCategoriesToProducts } from "./addCategoriesToProducts.js";
 import { addProductsToCategories } from "./addProductsToCategories.js";
-import { findOrCreate } from "./findOrCreate.js";
 
 export const createProduct = async body => {
 	const { name, description, price, images, categories } = body;

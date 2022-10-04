@@ -9,4 +9,4 @@ export const categories = Router();
 categories.route("/").get(getCategoriesController);
 categories.route("/:id").put(putCategoryController);
 categories.route("/").post(createCategoryController);
-categories.route("/").delete(deleteCategoryController);
+categories.route("/:id").delete(deleteCategoryController);

@@ -3,7 +3,7 @@ import {
 	ERR_PRICE_TYPE,
 	ERR_TITLE_TYPE
 } from "../constants/msgs.js";
-import { areStrings } from "../utils/areStrings.js";
+import { areStrings } from "../utils/common/areStrings.js";
 
 export const validateDtoGetProducts = (req, res, next) => {
 	const dto = req.query;

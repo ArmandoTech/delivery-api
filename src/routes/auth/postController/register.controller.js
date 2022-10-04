@@ -1,7 +1,7 @@
 import { VIRIFY_EMAIL } from "../../../constants/msgs.js";
-import { createToken } from "../../../utils/createToken.js";
-import { createUser } from "../../../utils/createUser.js";
-import { sendVerificationEmail } from "../../../utils/sendVerificationEmail.js";
+import { createToken } from "../../../utils/auth/createToken.js";
+import { sendVerificationEmail } from "../../../utils/common/sendVerificationEmail.js";
+import { createUser } from "../../../utils/users/createUser.js";
 
 export const registerController = async (req, res, next) => {
 	try {

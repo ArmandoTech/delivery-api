@@ -1,0 +1,1 @@
+- Note: The registry uses the "createUser" method, so it is not in this folder. it's in the users folder

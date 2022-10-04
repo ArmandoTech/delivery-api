@@ -1,6 +1,6 @@
 import { model, Schema } from "mongoose";
 
-const Category = new Schema({
+const CategorySchema = new Schema({
 	normalizedDisplay: {
 		type: String,
 		required: true,
@@ -17,6 +17,6 @@ const Category = new Schema({
 	products: [{ type: Schema.Types.ObjectId, ref: "Product" }]
 });
 
-Category.set("versionKey", false);
+CategorySchema.set("versionKey", false);
 
-export const CategoryModel = model("Category", Category);
+export const Category = model("Category", CategorySchema);
