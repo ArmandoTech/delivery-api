@@ -28,7 +28,7 @@ export const getPaginatedModel = async (
 		collection,
 		totalPages,
 		countDocuments,
-		currentPage: Number(page),
+		currentPage: realPage + 1,
 		documents
 	};
 };
