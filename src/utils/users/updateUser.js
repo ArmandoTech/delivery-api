@@ -2,13 +2,18 @@ import { User } from "../../models/User.js";
 
 export const updateUser = async (params, body) => {
 	const { id } = params;
-	const { username, email, password, img, phone } = body;
-	const user = await User.findOneAndUpdate(id, {
-		username,
-		email,
-		password,
-		img,
-		phone
-	});
+	const { username, email, password, img, phone, name } = body;
+	const user = await User.findByIdAndUpdate(
+		id,
+		{
+			name,
+			username,
+			email,
+			password,
+			img,
+			phone
+		},
+		{ new: true }
+	);
 	return user;
 };
