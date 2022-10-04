@@ -1,8 +1,8 @@
-import { CustomError } from "../classes/CustomError.js";
-import { CREDENTIALS_NOT_AVALIABLE } from "../constants/msgs.js";
-import { User } from "../models/User.js";
-import { encryptPassword } from "./encryptPassword.js";
-import { findOrCreate } from "./findOrCreate.js";
+import { CustomError } from "../../classes/CustomError.js";
+import { CREDENTIALS_NOT_AVALIABLE } from "../../constants/msgs.js";
+import { User } from "../../models/User.js";
+import { encryptPassword } from "../auth/encryptPassword.js";
+import { findOrCreate } from "../common/findOrCreate.js";
 
 export const createUser = async ({
 	username,

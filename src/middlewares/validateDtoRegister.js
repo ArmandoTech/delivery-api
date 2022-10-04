@@ -6,7 +6,7 @@ import {
 	REQUIRED_USERNAME,
 	TYPE_DTO_ERR
 } from "../constants/msgs.js";
-import { areStrings } from "../utils/areStrings.js";
+import { areStrings } from "../utils/common/areStrings.js";
 
 export const validateDtoRegister = (req, res, next) => {
 	const dto = req.body;

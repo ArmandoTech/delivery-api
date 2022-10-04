@@ -1,10 +1,11 @@
-import { CategoryModel } from "../../models/Category.js";
-import { stringNormalizer } from "../stringNormalizer.js";
+import { CustomError } from "../../classes/CustomError.js";
+import { Category } from "../../models/Category.js";
+import { stringNormalizer } from "../common/stringNormalizer.js";
 
 export const updateCategory = async (id, { display, img }) => {
-	if (!id) throw TypeError("Id is required");
+	if (!id) throw new CustomError({ status: 400, message: "Id is required" });
 
-	const categoryDocument = await CategoryModel.findById(id).exec();
+	const categoryDocument = await Category.findById(id).exec();
 
 	if (display) {
 		categoryDocument.display = display;

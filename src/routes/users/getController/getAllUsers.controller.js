@@ -1,4 +1,4 @@
-import { getUser } from "../../../utils/getUsers.js";
+import { getUser } from "../../../utils/users/getUsers.js";
 
 export const getAllUsersController = async (req, res, next) => {
 	try {

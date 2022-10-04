@@ -1,4 +1,4 @@
-import { getOneUser } from "../../../utils/getOneUser.js";
+import { getOneUser } from "../../../utils/users/getOneUser.js";
 
 export const getOneUserController = async (req, res, next) => {
 	try {
