@@ -1,4 +1,3 @@
-import { SUCCESS } from "../../../constants/msgs.js";
 import { getCategories } from "../../../utils/categoryQueries/getCategories.js";
 
 export const getCategoriesController = async (req, res, next) => {
@@ -6,7 +5,6 @@ export const getCategoriesController = async (req, res, next) => {
 		const paginatedCategories = await getCategories(req.query);
 
 		res.status(200).json({
-			msg: SUCCESS,
 			...paginatedCategories
 		});
 	} catch (err) {

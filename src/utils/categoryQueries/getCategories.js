@@ -8,24 +8,24 @@ import { stringNormalizer } from "../common/stringNormalizer.js";
 export async function getCategories({
 	name,
 	limit = LIMIT_CATEGORIES,
-	page = 0,
+	page,
 	equals = "true"
 }) {
 	const normalizedDisplay = new RegExp(stringNormalizer(name || ""));
 	const query = { normalizedDisplay };
-	const populate = { path: "products", model: Product, select: "-categories" };
+	const populate = { path: "products", model: Product, select: "_id name" };
+	const select = "_id display img";
 	const paginatedCategories = await getPaginatedModel(Category, {
+		collection: "categories",
 		limit,
 		page,
 		query,
+		select,
 		populate
 	});
 
 	if (paginatedCategories.countDocuments < 1)
 		throw new CustomError({ status: 204, message: "" });
-
-	paginatedCategories.categories = paginatedCategories.documents;
-	delete paginatedCategories.documents;
 
 	return paginatedCategories;
 }

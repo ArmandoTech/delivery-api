@@ -4,13 +4,14 @@ import { Product } from "../../models/Product.js";
 import { getPaginatedModel } from "../common/getPaginatedModel.js";
 
 export const getProduct = async queries => {
-	const { page = 0, limit = LIMIT_PRODUCTS } = queries;
+	const { page, limit = LIMIT_PRODUCTS } = queries;
 	const query = addQueriesFind(queries);
 	return await getPaginatedModel(Product, {
+		collection: "products",
 		query,
 		limit,
 		page,
-		populate: { path: "categories", model: Category, select: "-products" }
+		populate: { path: "categories", model: Category, select: "_id display" }
 	});
 };
 
