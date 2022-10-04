@@ -1,83 +1,53 @@
-# Endpoints Auth
+# Project: auth
 
-## http://localhost:3000/auth/register (POST)
+## End-point: register
 
-It allows registering a user, a link will be sent to the email which must be clicked to verify the registration, the link has a token valid for 1h embedded. Send the DTO by body.
+### Method: POST
 
-```
-  {
-    "email":"testedarcode@gmail.com",
-    "password":"Amo programar!",
-    "username":"edarcode",
-    "name":"edwin ortiz"
-  }
-```
+> ```
+> https://delivery-production-6b8e.up.railway.app/auth/register
+> ```
 
-Reply with status 201 if all goes well + a json:
+### Body (**raw**)
 
-```
+```json
 {
-  "msg": "Verify your account by clicking the link sent to your email"
+	"email": "testedarcode@gmail.com",
+	"password": "Amo programar!",
+	"username": "edarcode",
+	"name": "edwin ortiz"
 }
 ```
 
-## http://localhost:3000/auth/login (POST)
+## End-point: login
 
-Allows the user to obtain a token and some user data associated with it. The user must have a varified account. You can login with email or username. Send the DTO by body
+### Method: POST
 
-```
-  {
-    "email":"testedarcode@gmail.com",
-    "password":"Amo programar!"
-  }
-```
+> ```
+> https://delivery-production-6b8e.up.railway.app/auth/login
+> ```
 
-ó
+### Body (**raw**)
 
-```
-  {
-    "username":"edarcode",
-    "password":"Amo programar!"
-  }
+```json
+{
+	"username": "edarcodes",
+	"password": "Amo programar!"
+}
 ```
 
-Reply with status 201 if all goes well + a json:
+## End-point: verify token
 
-```
-  {
-    "username": "edarcode",
-    "email": "testedarcode@gmail.com",
-    "role": "cliente",
-    "name": "edwin ortiz",
-    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzMwNmE2NzlhZmYyYjAzOWQ0NDI1MGEiLCJpYXQiOjE2NjQxMTgzMjAsImV4cCI6MTY2NDIwNDcyMH0.q_58l0Sq6e7yrERQaXNtSy7ML9Wc_ClkIz2x0s-gKXw"
-  }
-```
+### Method: POST
 
-The token is valid for 24h.
+> ```
+> https://delivery-production-6b8e.up.railway.app/auth/verify-token
+> ```
 
-## http://localhost:3000/auth/verify-token (POST)
+### Headers
 
-Allows to validate if a token is valid. You must send the token to be validated with the key "token" through headers.
+| Content-Type | Value                                                                                                                                                                            |
+| ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| token        | eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzNiODIyNGI4MTFiNDYyMGM0YzM5MDkiLCJpYXQiOjE2NjQ4NDQ0MzgsImV4cCI6MTY2NDkzMDgzOH0.TciJI84bBwDQKzazOIu-FFo_OjvODIsjTQ5SvwXCCIY |
 
-Reply with status 200 if all goes well + a json:
-
-```
-  {
-    "username": "edarcode",
-    "email": "testedarcode@gmail.com",
-    "role": "cliente",
-    "name": "edwin ortiz"
-  }
-```
-
-## http://localhost:3000/auth/verify-register (GET)
-
-Validates if the link sent to a user's email when registering has been clicked. The token is embedded as a "token" query.
-
-Reply with status 200 if all goes well + a json:
-
-```
-  {
-    "msg": "Successful registration"
-  }
-```
+---

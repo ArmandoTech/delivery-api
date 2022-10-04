@@ -29,6 +29,8 @@ This repository contains the backend code for a food delivery application. This 
    ```shell
    PORT=
    MONGODB_URI=
+   EMAIL_NODEMAILER=
+   PASS_NODEMAILER=
    ```
 
 4. Execute development server
