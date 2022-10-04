@@ -1,8 +1,8 @@
 import { CustomError } from "../../classes/CustomError.js";
 import { ALREADY_EXISTS } from "../../constants/msgs.js";
 import { Category } from "../../models/Category.js";
-import { findOrCreate } from "../findOrCreate.js";
-import { stringNormalizer } from "../stringNormalizer.js";
+import { findOrCreate } from "../common/findOrCreate.js";
+import { stringNormalizer } from "../common/stringNormalizer.js";
 
 export const createCategory = async ({ display, img = "" }) => {
 	if (!display)
