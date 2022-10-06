@@ -7,7 +7,7 @@ import {
 	ERR_TITLE_TYPE,
 	REQUIRED_ID
 } from "../constants/msgs.js";
-import { areStrings } from "../utils/areStrings.js";
+import { areStrings } from "../utils/common/areStrings.js";
 
 export const validateDtoUpdateProduct = (req, res, next) => {
 	const dto = req.body;

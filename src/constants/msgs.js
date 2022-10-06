@@ -42,3 +42,5 @@ export const ERR_QUERY_TYPE = "Filtrado por query no permitido";
 export const ERR_PARAMETERS_MISSING =
 	"Debe haber nombre, descripción, precio e imagenes";
 export const ERR_NOT_ARRAY = "Las categorías deben ser un array";
+export const NO_VALUES_FOR_UPDATE = "No se indicó ningún valor que actualizar";
+export const WRONG_ID_FORMAT = "El formato del id es incorrecto";
