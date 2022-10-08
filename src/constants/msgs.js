@@ -45,3 +45,4 @@ export const ERR_NOT_ARRAY = "Las categorías deben ser un array";
 export const NO_VALUES_FOR_UPDATE = "No se indicó ningún valor que actualizar";
 export const WRONG_ID_FORMAT = "El formato del id es incorrecto";
 export const PRODUCT_DELETED = "Producto eliminado correctamente";
+export const PRODUCT_UPDATED = "Producto actualizado correctamente";
