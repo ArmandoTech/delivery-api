@@ -44,3 +44,5 @@ export const ERR_PARAMETERS_MISSING =
 export const ERR_NOT_ARRAY = "Las categorías deben ser un array";
 export const NO_VALUES_FOR_UPDATE = "No se indicó ningún valor que actualizar";
 export const WRONG_ID_FORMAT = "El formato del id es incorrecto";
+export const ADMIN_ROLE_NEEDED =
+	"Debes ser administrador para acceder a este campo";
