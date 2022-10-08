@@ -13,8 +13,22 @@ import { updateUserByAdminController } from "./updateController/updateUserByAdmi
 
 export const users = Router();
 
-users.route("/").get(validateDtoGetUsers, getAllUsersController);
-users.route("/:id").get(validateDtoGetOneUser, getOneUserController);
+users
+	.route("/")
+	.get(
+		validateToken,
+		validationAdmin,
+		validateDtoGetUsers,
+		getAllUsersController
+	);
+users
+	.route("/:id")
+	.get(
+		validateToken,
+		validationAdmin,
+		validateDtoGetOneUser,
+		getOneUserController
+	);
 users.route("/:id").delete(validateDtoGetOneUser, deleteUserController);
 users.route("/:id").patch(validateDtoUpdateUser, updateUserController);
 users
