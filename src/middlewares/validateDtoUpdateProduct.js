@@ -16,7 +16,7 @@ export const validateDtoUpdateProduct = (req, res, next) => {
 	if (sizeDto > 4) return res.status(400).json({ msg: ERR_SIZEDTO_TYPE });
 	if (!id) return res.status(400).json({ msg: REQUIRED_ID });
 	if (id && !areStrings[id]) return res.status(400).json({ msg: ERR_ID_TYPE });
-	if (dto.title && !areStrings([dto.title]))
+	if (dto.name && !areStrings([dto.name]))
 		return res.status(400).json({ msg: ERR_TITLE_TYPE });
 	if (dto.description && !areStrings([dto.description]))
 		return res.status(400).json({ msg: ERR_DESCRIPTION_TYPE });

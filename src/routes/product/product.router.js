@@ -2,6 +2,7 @@ import { Router } from "express";
 import { validateDtoCreateProducts } from "../../middlewares/validateDtoCreateProducts.js";
 import { validateDtoGetOneProduct } from "../../middlewares/validateDtoGetOneProduct.js";
 import { validateDtoGetProducts } from "../../middlewares/validateDtoGetProducts.js";
+import { validateDtoUpdateProduct } from "../../middlewares/validateDtoUpdateProduct.js";
 import { validateToken } from "../../middlewares/validateToken.js";
 import { validationAdmin } from "../../middlewares/validationAdmin.js";
 import { deleteProductController } from "./deleteController/deleteProduct.controller.js";
@@ -24,5 +25,17 @@ products
 	);
 products
 	.route("/:id")
-	.delete(validateDtoGetOneProduct, deleteProductController);
-products.route("/:id").patch(updateProductController);
+	.delete(
+		validateToken,
+		validationAdmin,
+		validateDtoGetOneProduct,
+		deleteProductController
+	);
+products
+	.route("/:id")
+	.patch(
+		validateToken,
+		validationAdmin,
+		validateDtoUpdateProduct,
+		updateProductController
+	);
