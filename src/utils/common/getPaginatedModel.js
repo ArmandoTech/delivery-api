@@ -2,7 +2,7 @@ import { CustomError } from "../../classes/CustomError.js";
 
 export const getPaginatedModel = async (
 	Model,
-	{ query = {}, limit = 10, page, populate, collection = "undefained", select }
+	{ query = {}, limit = 10, page, populate, collection = "undefined", select }
 ) => {
 	if (!Model)
 		throw new CustomError({ status: 400, message: "Model is required." });
