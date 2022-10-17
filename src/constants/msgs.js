@@ -51,3 +51,9 @@ export const ADDRESS_REQUIRED = "Se requiere de una dirección";
 export const WRONG_CORDINATES = "Coordenadas incorrectas";
 export const CANT_UPDATE_CLOSED_ORDER =
 	"Este pedido ha sido cerrado y no puede ser modificado.";
+export const PRODUCT_DELETED = "Producto eliminado correctamente";
+export const PRODUCT_UPDATED = "Producto actualizado correctamente";
+export const ADMIN_ROLE_NEEDED =
+	"Debes ser administrador para acceder a este campo";
+export const UPDATE_SUCSESSFULL = "Usuario actualizado correctamente";
+export const ERR_VERIFY_TYPE = "El campo de verificación debe ser un booleano";
