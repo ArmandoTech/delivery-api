@@ -44,6 +44,13 @@ export const ERR_PARAMETERS_MISSING =
 export const ERR_NOT_ARRAY = "Las categorías deben ser un array";
 export const NO_VALUES_FOR_UPDATE = "No se indicó ningún valor que actualizar";
 export const WRONG_ID_FORMAT = "El formato del id es incorrecto";
+export const WRONG_ORDER_STATUS = "El status del pedido es incorrecto";
+export const UNVALID_UPDATE_PETITION =
+	"No ha sido posible actualizar. Petición incorrecta";
+export const ADDRESS_REQUIRED = "Se requiere de una dirección";
+export const WRONG_CORDINATES = "Coordenadas incorrectas";
+export const CANT_UPDATE_CLOSED_ORDER =
+	"Este pedido ha sido cerrado y no puede ser modificado.";
 export const PRODUCT_DELETED = "Producto eliminado correctamente";
 export const PRODUCT_UPDATED = "Producto actualizado correctamente";
 export const ADMIN_ROLE_NEEDED =
