@@ -13,7 +13,11 @@ export async function getCategories({
 }) {
 	const normalizedDisplay = new RegExp(stringNormalizer(name || ""));
 	const query = { normalizedDisplay };
-	const populate = { path: "products", model: Product, select: "_id name" };
+	const populate = {
+		path: "products",
+		model: Product,
+		select: "_id name price"
+	};
 	const select = "_id display img";
 	const paginatedCategories = await getPaginatedModel(Category, {
 		collection: "categories",
