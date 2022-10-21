@@ -57,3 +57,4 @@ export const ADMIN_ROLE_NEEDED =
 	"Debes ser administrador para acceder a este campo";
 export const UPDATE_SUCSESSFULL = "Usuario actualizado correctamente";
 export const ERR_VERIFY_TYPE = "El campo de verificación debe ser un booleano";
+export const INVALID_USER = "Usuario inválido";
