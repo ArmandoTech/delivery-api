@@ -1,8 +1,26 @@
 export const categoriesMockup = [
-	{ display: "Bebidas alcohólicas", img: "www.perrito.com" },
-	{ display: "Bebidas sin alcohól", img: "www.perrito.com" },
-	{ display: "Pastas", img: "www.perrito.com" },
-	{ display: "Postres", img: "www.perrito.com" },
-	{ display: "Entradas", img: "www.perrito.com" },
-	{ display: "Platos fuertes", img: "www.perrito.com" }
+	{
+		display: "Bebidas alcohólicas",
+		img: "https://images.pexels.com/photos/13713070/pexels-photo-13713070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+	},
+	{
+		display: "Bebidas sin alcohól",
+		img: "https://images.pexels.com/photos/3230214/pexels-photo-3230214.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+	},
+	{
+		display: "Pastas",
+		img: "https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+	},
+	{
+		display: "Postres",
+		img: "https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+	},
+	{
+		display: "Entradas",
+		img: "https://images.pexels.com/photos/1211887/pexels-photo-1211887.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+	},
+	{
+		display: "Platos fuertes",
+		img: "https://images.pexels.com/photos/2454533/pexels-photo-2454533.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+	}
 ];

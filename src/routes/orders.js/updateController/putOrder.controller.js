@@ -2,7 +2,8 @@ import { updateOrder } from "../../../utils/orders/updateOrder.js";
 
 export const putOrderController = async (req, res, next) => {
 	try {
-		await updateOrder(req.params.id, req.body);
+		const { params, body, user } = req;
+		await updateOrder({ id: params.id, body, user });
 		res.status(200).json({
 			msg: "Actualización realizada correctamente."
 		});
