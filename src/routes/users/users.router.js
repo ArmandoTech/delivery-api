@@ -8,6 +8,7 @@ import { validationAdmin } from "../../middlewares/validationAdmin.js";
 import { deleteUserController } from "./deleteController/deleteUser.controller.js";
 import { getAllUsersController } from "./getController/getAllUsers.controller.js";
 import { getOneUserController } from "./getController/getOneUser.controller.js";
+import { getUserByTokenController } from "./getController/getUserByToken.controller.js";
 import { updateUserController } from "./updateController/updateUser.controller.js";
 import { updateUserByAdminController } from "./updateController/updateUserByAdmin.controller.js";
 
@@ -21,6 +22,7 @@ users
 		validateDtoGetUsers,
 		getAllUsersController
 	);
+users.route("/myProfile").get(validateToken, getUserByTokenController);
 users
 	.route("/:id")
 	.get(
