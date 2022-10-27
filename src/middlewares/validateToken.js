@@ -10,7 +10,6 @@ import { SECRET } from "../env/server.js";
 import { User } from "../models/User.js";
 
 export const validateToken = async (req, res, next) => {
-	console.log(req);
 	try {
 		const { token } = req.headers;
 		if (!token) return res.status(400).json({ msg: NO_TOKEN });
