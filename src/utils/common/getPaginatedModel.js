@@ -11,8 +11,8 @@ export const getPaginatedModel = async (
 
 	const countDocuments = await Model.countDocuments(query);
 	if (countDocuments === 0) return {};
-	if (limit < 0) limit = Math.abs(limit);
-	if (limit === 0) limit = countDocuments;
+	if (Number(limit) < 0) limit = Math.abs(limit);
+	if (Number(limit) === 0) limit = countDocuments;
 
 	const totalPages = Math.ceil(countDocuments / limit);
 
