@@ -7,7 +7,6 @@ import { Types } from "mongoose";
 export const getProduct = async queries => {
 	const { page, limit = LIMIT_PRODUCTS } = queries;
 	const query = addQueriesFind(queries);
-	console.log(query);
 	return await getPaginatedModel(Product, {
 		collection: "products",
 		query,

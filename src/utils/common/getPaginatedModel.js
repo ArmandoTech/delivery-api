@@ -10,8 +10,11 @@ export const getPaginatedModel = async (
 		throw new CustomError({ status: 400, message: "Page incorrect." });
 
 	const countDocuments = await Model.countDocuments(query);
-	const totalPages = Math.ceil(countDocuments / limit);
 	if (countDocuments === 0) return {};
+	if (limit < 0) limit = Math.abs(limit);
+	if (limit === 0) limit = countDocuments;
+
+	const totalPages = Math.ceil(countDocuments / limit);
 
 	if (page > totalPages)
 		throw new CustomError({ status: 400, message: "Page incorrect." });

@@ -8,7 +8,7 @@ import { areStrings } from "../utils/common/areStrings.js";
 export const validateDtoGetProducts = (req, res, next) => {
 	const dto = req.query;
 	const price = Number(dto.price);
-	console.log(typeof price);
+
 	if (dto.title && !areStrings([dto.title]))
 		return res.status(400).json({ msg: ERR_TITLE_TYPE });
 	if (dto.description && !areStrings([dto.description]))
